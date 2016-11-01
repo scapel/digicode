@@ -1,3 +1,17 @@
+/**
+Code pour digicode activant un relai
+Auteur: Sebastien Capel
+Date: 2015
+
+Reprogrammable en tapant l'inverse du code suivi de #, puis ABCD #, puis nouveau code #
+Code pour Arduino NANO.
+Cabler un usb2serie de l'ordinateur vers la carte RX->TX et TX->RX
+Configuration LS de reprogramation : Vitesse 19200 Baud, Bit de données 8, Parite: aucune, Control de Flux Aucune, Bit d'arret 1
+Configuration API Arduino (Version API 1.0.6): Type de carte Arduino pro or pro mini (5V 16Mz) Atmega 328, Programmeur USB tiny ISP
+
+*/
+
+
 #include "types.h"
 //#include <Keypad.h>
 #include "arduino.h"
@@ -38,7 +52,8 @@ void setup(){
   // initialise le module LED
   InitSwitchLed();
   
-  WriteCode(0x4321);
+  //Pour debug, a chaque reset, ecrase le code en EEPROM par celui ci.
+  //WriteCode(0x4321);
 }
 
 int8 cptMauvaisCode;
