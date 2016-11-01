@@ -90,7 +90,7 @@ boolean enregistreCode (void)
             {
               WriteCode (codeLu);
               // Verifie que le code s'est bien inscrit en mémoire
-              if ( codeLu = ReadCode() )
+              if ( codeLu == ReadCode() )
               {
                 IhmIWant = ENREGISTRE_SUCCES;
               }
